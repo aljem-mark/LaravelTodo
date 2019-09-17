@@ -26,5 +26,7 @@ Route::middleware(['auth'])->group(function() {
             'destroy'
         ]
     ]);
+
+    Route::patch('tasks/{id}/update', 'TaskController@updateTitle');
 });
 

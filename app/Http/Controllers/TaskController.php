@@ -65,6 +65,28 @@ class TaskController extends Controller
     }
 
     /**
+     * Update the title of the given task and redirect to tasks index.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function updateTitle(Request $request)
+    {
+        $data = $this->validate($request, [
+            'title' => 'required|string|max:255',
+        ]);
+
+        $task = Task::find($request['id']);
+
+        $task->title = $request['title'];
+        $task->save();
+
+        session()->flash('status', "Task Title Updated!");
+
+        return redirect('/tasks');
+    }
+
+    /**
      * Delete the given task and redirect to tasks index.
      *
      * @param \App\Models\Task $task
