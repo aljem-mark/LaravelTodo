@@ -26,7 +26,6 @@ class Task extends Model
     ];
 
     /**
-     * The relationship to the owning user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

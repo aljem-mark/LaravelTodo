@@ -38,7 +38,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * The relationship to the user's tasks.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
